@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Discipline Blueprint: a practical, colorful guide to overcoming procrastination, building habits, managing distractions, and following through.">
+<title>The Discipline Blueprint | A Practical Guide</title>
+<style>
+  :root{
+    --navy:#14213d; --ink:#26324a; --muted:#65718a; --cream:#fffaf2;
+    --purple:#6c4cf1; --pink:#ff6b8a; --teal:#17a99a; --yellow:#ffd166;
+    --blue:#eaf0ff; --lavender:#f0ebff; --mint:#e7faf4; --peach:#fff0e7;
+    --white:#fff; --line:#e7e9f2; --shadow:0 18px 45px rgba(31,43,80,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.75 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  a{color:var(--purple)}
+  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#20144f 0%,#5636cb 52%,#ff6b8a 115%);color:#fff;padding:72px 22px 76px}
+  .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;opacity:.16;background:#fff}
+  .hero:before{width:310px;height:310px;right:-70px;top:-95px}
+  .hero:after{width:190px;height:190px;left:-60px;bottom:-90px}
+  .hero-inner{max-width:1040px;margin:auto;position:relative;z-index:1}
+  .eyebrow{display:inline-block;padding:7px 13px;border:1px solid #ffffff66;border-radius:99px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+  h1{font-size:clamp(2.8rem,7vw,5.7rem);line-height:.98;letter-spacing:-.055em;max-width:850px;margin:24px 0}
+  .hero p{max-width:690px;font-size:1.15rem;color:#f3efff}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .hero-meta span{background:#ffffff1e;border:1px solid #ffffff36;border-radius:12px;padding:9px 13px;font-size:.9rem}
+  .wrap{max-width:1040px;margin:auto;padding:0 22px}
+  .layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:30px;align-items:start;margin-top:38px}
+  .toc{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);max-height:calc(100vh - 36px);overflow:auto}
+  .toc h2{font-size:1rem;margin:0 0 12px;color:var(--navy)}
+  .toc a{display:block;text-decoration:none;color:#59627b;font-size:.9rem;padding:6px 8px;border-radius:8px;line-height:1.4}
+  .toc a:hover{background:var(--lavender);color:var(--purple)}
+  main{min-width:0}
+  section{background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(22px,4vw,42px);margin-bottom:24px;box-shadow:0 8px 28px rgba(31,43,80,.045);scroll-margin-top:20px}
+  .chapter-label{display:inline-flex;align-items:center;gap:8px;color:var(--purple);font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.13em}
+  h2{color:var(--navy);font-size:clamp(1.65rem,3.5vw,2.35rem);line-height:1.15;letter-spacing:-.035em;margin:10px 0 18px}
+  h3{color:var(--navy);font-size:1.18rem;line-height:1.3;margin:26px 0 9px}
+  p{margin:0 0 15px}
+  ul,ol{padding-left:1.35rem;margin:8px 0 18px}
+  li{padding-left:4px;margin:6px 0}
+  .lead{font-size:1.08rem;color:#4c5872}
+  .callout{padding:18px 20px;border-radius:16px;margin:20px 0;background:var(--blue);border-left:5px solid var(--purple)}
+  .callout strong{color:var(--navy)}
+  .callout.pink{background:#fff0f4;border-color:var(--pink)}
+  .callout.teal{background:var(--mint);border-color:var(--teal)}
+  .callout.yellow{background:#fff7df;border-color:#f3bd35}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+  .card{border-radius:17px;padding:19px;background:var(--lavender)}
+  .card:nth-child(2){background:var(--mint)}
+  .card:nth-child(3){background:var(--peach)}
+  .card:nth-child(4){background:#fff7df}
+  .card h3{margin:0 0 7px;font-size:1.04rem}
+  .card p{font-size:.95rem;margin:0}
+  .step{display:grid;grid-template-columns:42px 1fr;gap:13px;margin:17px 0}
+  .num{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:var(--purple);color:#fff;font-weight:900}
+  .step h3{margin:2px 0 5px}
+  .step p{margin:0}
+  .table-wrap{overflow-x:auto;margin:18px 0}
+  table{border-collapse:collapse;width:100%;min-width:510px;font-size:.94rem}
+  th{background:var(--navy);color:#fff;text-align:left}
+  th,td{padding:12px 14px;border:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#f8f7ff}
+  .checklist{list-style:none;padding:0}
+  .checklist li{padding:10px 12px;background:#f8f9fd;border-radius:10px;margin:8px 0}
+  .checklist li:before{content:"□";font-weight:900;color:var(--purple);font-size:1.1rem;margin-right:10px}
+  .worksheet{border:2px dashed #c9c0ff;border-radius:16px;padding:18px;margin:16px 0;background:#fcfbff}
+  .line{height:28px;border-bottom:1px solid #cfd3e2}
+  .prompt{font-weight:750;color:var(--navy);margin:12px 0 5px}
+  .pill{display:inline-block;border-radius:999px;padding:5px 10px;font-size:.8rem;font-weight:800;background:#e8e2ff;color:#4c35bb;margin:3px 3px 3px 0}
+  .day{border-left:4px solid var(--teal);padding:3px 0 3px 16px;margin:18px 0}
+  .day h3{margin:0 0 5px}
+  .progress{height:9px;background:#e9eaf4;border-radius:99px;overflow:hidden;margin:8px 0 15px}
+  .progress span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--teal),var(--purple),var(--pink))}
+  .footer{background:var(--navy);color:#e9eaff;padding:38px 22px;text-align:center;margin-top:35px}
+  .footer p{max-width:760px;margin:8px auto;color:#d5d9ef;font-size:.92rem}
+  .btn{display:inline-block;border:0;border-radius:12px;padding:12px 17px;background:var(--yellow);color:var(--navy);font-weight:900;text-decoration:none;cursor:pointer}
+  .small{font-size:.9rem;color:var(--muted)}
+  .quote{font-size:1.35rem;line-height:1.45;font-weight:800;letter-spacing:-.025em;color:var(--navy);padding:10px 0}
+  @media(max-width:820px){.layout{grid-template-columns:1fr}.toc{position:relative;top:auto;max-height:none}.toc nav{columns:2}.hero{padding:56px 22px}.grid{grid-template-columns:1fr}}
+  @media(max-width:480px){.toc nav{columns:1}section{border-radius:18px;padding:22px 18px}.hero-meta span{font-size:.82rem}}
+  @media print{body{background:#fff}.hero{padding:35px 22px;-webkit-print-color-adjust:exact;print-color-adjust:exact}.layout{display:block}.toc{position:static;box-shadow:none;max-height:none;margin-bottom:20px}section{box-shadow:none;break-inside:avoid}.footer{break-inside:avoid}a{color:inherit}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">A practical personal-growth guide</span>
+    <h1>The Discipline<br>Blueprint</h1>
+    <p>How to stop procrastinating, build reliable habits, manage distractions, and follow through—even when motivation is nowhere to be found.</p>
+    <div class="hero-meta">
+      <span>✦ Action-focused</span><span>✦ Beginner-friendly</span><span>✦ 30-day action plan</span><span>✦ Worksheets included</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <aside class="toc">
+    <h2>Inside this guide</h2>
+    <nav>
+      <a href="#start">Start here</a><a href="#truth">1. What discipline really is</a>
+      <a href="#procrastination">2. Understand procrastination</a><a href="#reset">3. The 10-minute reset</a>
+      <a href="#systems">4. Build a system</a><a href="#habits">5. Make habits stick</a>
+      <a href="#focus">6. Control distractions</a><a href="#energy">7. Manage your energy</a>
+      <a href="#setbacks">8. Recover from setbacks</a><a href="#environment">9. Design your environment</a>
+      <a href="#plan">10. The 30-day plan</a><a href="#worksheets">Worksheets</a>
+      <a href="#faq">Frequently asked questions</a><a href="#pledge">Your commitment</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="start">
+      <span class="chapter-label">Welcome • Read this first</span>
+      <h2>You don't need to become a different person overnight.</h2>
+      <p class="lead">You need a repeatable way to do the next useful thing, especially when the task feels boring, difficult, uncertain, or uncomfortable.</p>
+      <p>Maybe you make plans with genuine excitement, then delay starting. Maybe you work only when a deadline becomes frighteningly close. Maybe you know what would improve your life but keep reaching for your phone instead. This guide is for that gap between what you intend to do and what you actually do.</p>
+      <div class="callout teal"><strong>The central idea:</strong> Discipline is not about being perfect or harsh with yourself. It is the practice of making useful actions easier to start, easier to repeat, and easier to return to after a difficult day.</div>
+      <h3>What you'll learn</h3>
+      <ul>
+        <li>How to identify the real reason you delay tasks.</li>
+        <li>A simple method for starting when you feel resistance.</li>
+        <li>How to build routines that work even when motivation changes.</li>
+        <li>Ways to reduce phone distractions and protect your attention.</li>
+        <li>How to plan your week, track progress, and recover from missed days.</li>
+      </ul>
+      <p class="small">How to use this guide: read one chapter at a time, complete the short exercises, and test the methods in your real life. You do not need to use every technique. Keep the ones that help.</p>
+    </section>
+
+    <section id="truth">
+      <span class="chapter-label">Chapter 01</span>
+      <h2>What self-discipline really means</h2>
+      <p>Self-discipline is the ability to act in line with your priorities even when your immediate feelings pull you in another direction. It does not mean ignoring rest, suppressing every emotion, or forcing yourself to work nonstop.</p>
+      <div class="grid">
+        <div class="card"><h3>Motivation</h3><p>“I feel ready, so I'll do it.” Motivation can give you a strong start, but it naturally rises and falls.</p></div>
+        <div class="card"><h3>Discipline</h3><p>“This matters, so I'll take the next small step.” Discipline relies on decisions, routines, and systems—not mood alone.</p></div>
+        <div class="card"><h3>Consistency</h3><p>Returning to a useful action repeatedly, even if each session is small.</p></div>
+        <div class="card"><h3>Self-trust</h3><p>Confidence built by making realistic promises and keeping them more often than not.</p></div>
+      </div>
+      <h3>Stop using shame as your strategy</h3>
+      <p>Calling yourself lazy may feel like accountability, but it rarely tells you what to change. A more useful question is: <em>“What made this action hard to start, and what can I adjust?”</em> Maybe the task is unclear, too large, boring, frightening, or surrounded by distractions. Each cause calls for a different solution.</p>
+      <div class="callout yellow"><strong>Try this reframe:</strong> Instead of “I never finish anything,” say, “I have a follow-through problem I can work on by making tasks smaller and reviewing my progress daily.” This turns an identity judgment into a solvable problem.</div>
+      <h3>The discipline loop</h3>
+      <p><span class="pill">Choose</span> → <span class="pill">Make it small</span> → <span class="pill">Start</span> → <span class="pill">Record</span> → <span class="pill">Review</span> → <span class="pill">Repeat</span></p>
+      <p>The goal is not to win every day. The goal is to build a process that helps you keep going and return quickly when you slip.</p>
+    </section>
+
+    <section id="procrastination">
+      <span class="chapter-label">Chapter 02</span>
+      <h2>Understand why you procrastinate</h2>
+      <p>Procrastination is often a way of escaping an uncomfortable feeling in the short term. The task might create boredom, uncertainty, fear of failure, fear of judgment, or a sense of being overwhelmed. Avoiding it provides quick relief—but the task remains, and stress can grow.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>What you notice</th><th>Possible reason</th><th>A useful response</th></tr></thead>
+        <tbody>
+          <tr><td>“I don't know where to begin.”</td><td>The task is vague or too large.</td><td>Define one physical next action, such as opening the document and writing three bullet points.</td></tr>
+          <tr><td>“It has to be perfect.”</td><td>Fear of mistakes or judgment.</td><td>Make a rough first version. Give yourself permission to improve it later.</td></tr>
+          <tr><td>“I'll do it when I feel motivated.”</td><td>You are waiting for a feeling that may not arrive.</td><td>Use a tiny start: work for five or ten minutes, then decide whether to continue.</td></tr>
+          <tr><td>“There are too many things to do.”</td><td>Overload and unclear priorities.</td><td>Choose one important task for the next work block. Park the rest on a list.</td></tr>
+          <tr><td>“I keep checking my phone.”</td><td>Easy access to quick rewards and interruptions.</td><td>Put the phone in another room or use a focus setting during a timed session.</td></tr>
+          <tr><td>“I avoid it because it might go badly.”</td><td>Fear, uncertainty, or low confidence.</td><td>Identify the smallest safe experiment that would teach you what to do next.</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Use the “name it, shrink it, start it” method</h3>
+      <div class="step"><div class="num">1</div><div><h3>Name it</h3><p>Say what is happening without judging yourself: “I'm avoiding this because I don't know how to begin.”</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>Shrink it</h3><p>Turn the goal into an action that takes two to ten minutes. “Study biology” becomes “read two pages and write three notes.”</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Start it</h3><p>Begin before negotiating with yourself again. You only have to complete the first small block, not the whole project.</p></div></div>
+      <div class="callout pink"><strong>Important:</strong> If ongoing difficulty with attention, mood, sleep, anxiety, or daily functioning is making tasks consistently hard, it may be worth speaking with a qualified health professional. Productivity methods can help, but they are not a substitute for individualized care.</div>
+    </section>
+
+    <section id="reset">
+      <span class="chapter-label">Chapter 03</span>
+      <h2>The 10-minute reset: how to begin when you don't feel like it</h2>
+      <p>Use this whenever you catch yourself scrolling, delaying, or repeatedly telling yourself you'll start later.</p>
+      <div class="step"><div class="num">1</div><div><h3>Pause for 30 seconds</h3><p>Take a slow breath and notice the urge to escape. You don't need to eliminate the feeling before acting.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>Choose one task</h3><p>Ask: “What is the most useful thing I can move forward right now?” Choose one—not five.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Define the first visible action</h3><p>Examples: open the assignment, put on walking shoes, write the first email sentence, or place the ingredients on the counter.</p></div></div>
+      <div class="step"><div class="num">4</div><div><h3>Set a 10-minute timer</h3><p>Work only on that action. Keep the bar low enough that beginning feels possible.</p></div></div>
+      <div class="step"><div class="num">5</div><div><h3>Decide what happens next</h3><p>When the timer ends, either continue for another block or stop deliberately and record your progress. Starting counts even if you do not finish.</p></div></div>
+      <div class="callout teal"><strong>Example:</strong> You have avoided writing a report for three days. Instead of demanding “finish the report,” your ten-minute task is to open a document, write a working title, add three headings, and jot down rough notes. The next step is now clearer.</div>
+      <h3>Make starting automatic with an “if–then” plan</h3>
+      <p>Write a specific plan that links a situation to an action:</p>
+      <ul>
+        <li><strong>If</strong> I finish breakfast, <strong>then</strong> I will study for 15 minutes at my desk.</li>
+        <li><strong>If</strong> I reach for social media during a work block, <strong>then</strong> I will put my phone away and return to the next line.</li>
+        <li><strong>If</strong> I miss my planned session, <strong>then</strong> I will do a five-minute version before bedtime or schedule a clear replacement time.</li>
+      </ul>
+    </section>
+
+    <section id="systems">
+      <span class="chapter-label">Chapter 04</span>
+      <h2>Build a system instead of relying on willpower</h2>
+      <p>A useful system answers four questions: What matters today? When will I do it? What is the first step? How will I know I made progress?</p>
+      <h3>The daily “1–3–5” plan</h3>
+      <div class="grid">
+        <div class="card"><h3>1 important task</h3><p>Choose the one meaningful result that would make today feel worthwhile.</p></div>
+        <div class="card"><h3>3 supporting tasks</h3><p>List up to three smaller tasks that help your responsibilities move forward.</p></div>
+        <div class="card"><h3>5-minute setup</h3><p>Prepare your tools, clear your workspace, and write the first action before you begin.</p></div>
+        <div class="card"><h3>1 closing review</h3><p>At the end of the day, note what moved forward and choose tomorrow's first step.</p></div>
+      </div>
+      <h3>Plan your time honestly</h3>
+      <p>Don't schedule every minute. Leave space for travel, meals, messages, family responsibilities, and unexpected events. A plan that assumes unlimited energy will fail the moment real life appears.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Time block</th><th>Purpose</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Start-up: 5 minutes</td><td>Choose task and prepare</td><td>Open notes, silence notifications, set timer.</td></tr>
+          <tr><td>Focus: 20–30 minutes</td><td>Work on one priority</td><td>Complete a problem set or draft a page.</td></tr>
+          <tr><td>Break: 5 minutes</td><td>Recover attention</td><td>Stand, stretch, drink water.</td></tr>
+          <tr><td>Second block: 20–30 minutes</td><td>Continue or review</td><td>Correct errors or finish the next section.</td></tr>
+          <tr><td>Close: 3 minutes</td><td>Make tomorrow easier</td><td>Record progress and leave materials ready.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">The timing is a starting point, not a rule. Try shorter or longer blocks depending on the task, your energy, and your circumstances.</p>
+      <h3>Use the “next action” rule</h3>
+      <p>Never leave a project as a vague label. “Build my business” is too broad. “Write the headline for my service page” is actionable. “Get fit” is broad. “Walk for 15 minutes after work on Monday, Wednesday, and Friday” is actionable.</p>
+    </section>
+
+    <section id="habits">
+      <span class="chapter-label">Chapter 05</span>
+      <h2>Build habits that survive low motivation</h2>
+      <p>Habits become easier when the cue is reliable, the action is manageable, and the reward is clear. You do not need a dramatic routine. You need a routine you can repeat.</p>
+      <h3>The four-part habit recipe</h3>
+      <div class="step"><div class="num">A</div><div><h3>Anchor it to something you already do</h3><p>“After I make my morning tea, I will read one page.” Existing routines can remind you to begin.</p></div></div>
+      <div class="step"><div class="num">B</div><div><h3>Make it small enough to repeat</h3><p>Start with five minutes of reading, one paragraph of writing, or a short walk. Increase gradually when the routine feels stable.</p></div></div>
+      <div class="step"><div class="num">C</div><div><h3>Make progress visible</h3><p>Mark a calendar, check a box, or record the minutes completed. Track the action you control, not only the final result.</p></div></div>
+      <div class="step"><div class="num">D</div><div><h3>Give yourself a satisfying finish</h3><p>Enjoy a cup of tea, stretch, listen to a favorite song, or simply acknowledge that you followed through.</p></div></div>
+      <h3>Use a minimum version for difficult days</h3>
+      <p>For each important habit, define a normal version and a minimum version. The minimum version keeps the habit alive when time or energy is limited.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Habit</th><th>Normal version</th><th>Minimum version</th></tr></thead>
+        <tbody>
+          <tr><td>Study</td><td>45 minutes of focused study</td><td>Read one page and write one note</td></tr>
+          <tr><td>Exercise</td><td>30-minute workout</td><td>Five minutes of movement</td></tr>
+          <tr><td>Writing</td><td>500 words</td><td>Write one rough paragraph</td></tr>
+          <tr><td>Planning</td><td>Review the whole week</td><td>Choose tomorrow's first task</td></tr>
+          <tr><td>Reading</td><td>20 pages</td><td>Read one page</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout yellow"><strong>Remember:</strong> The minimum version is a bridge, not a permanent ceiling. Use it on genuinely difficult days, and return to your usual target when you can.</div>
+      <h3>Track consistency without becoming a perfectionist</h3>
+      <p>A missed day is information, not a verdict on your character. Look for patterns: Was the target too ambitious? Was the cue unclear? Were you tired? Was the environment distracting? Adjust the system and continue.</p>
+    </section>
+
+    <section id="focus">
+      <span class="chapter-label">Chapter 06</span>
+      <h2>Take control of distractions</h2>
+      <p>Attention is easier to protect before you begin than to recover after dozens of interruptions. Instead of trying to resist every temptation, make distractions less convenient.</p>
+      <h3>Your 5-step focus setup</h3>
+      <ol>
+        <li><strong>Choose one target.</strong> Write down the result for this session.</li>
+        <li><strong>Remove obvious temptations.</strong> Put your phone out of reach, close unrelated tabs, and silence nonessential alerts.</li>
+        <li><strong>Prepare everything you need.</strong> Keep water, notes, charger, and tools nearby so you do not have to get up repeatedly.</li>
+        <li><strong>Use a timer.</strong> Start with 10–25 minutes if sustained focus feels difficult.</li>
+        <li><strong>Capture distractions instead of following them.</strong> If you remember an unrelated task, write it on a “later” list and return to work.</li>
+      </ol>
+      <h3>Create rules for your phone</h3>
+      <ul>
+        <li>Keep social apps off your home screen or log out between planned sessions.</li>
+        <li>Use Do Not Disturb or a focus mode during important work.</li>
+        <li>Choose specific times to check messages rather than checking whenever an urge appears.</li>
+        <li>Charge your phone away from your bed if late-night scrolling is a problem.</li>
+        <li>When possible, use a separate device or browser profile for work.</li>
+      </ul>
+      <div class="callout pink"><strong>Don't aim for a distraction-free life.</strong> Aim to notice distractions sooner and return to your chosen task more quickly. Interruptions are normal; practicing the return is part of focus.</div>
+      <h3>Try a “focus contract”</h3>
+      <div class="worksheet">
+        <p class="prompt">For the next focus block, I will work on:</p><div class="line"></div>
+        <p class="prompt">I will begin at:</p><div class="line"></div>
+        <p class="prompt">I will put these distractions away:</p><div class="line"></div>
+        <p class="prompt">My planned break or reward is:</p><div class="line"></div>
+      </div>
+    </section>
+
+    <section id="energy">
+      <span class="chapter-label">Chapter 07</span>
+      <h2>Manage energy, not just time</h2>
+      <p>Time management cannot solve every problem if you are exhausted, hungry, overwhelmed, or trying to do demanding work at the point of day when you have the least energy. Your plan should respect your body and your responsibilities.</p>
+      <div class="grid">
+        <div class="card"><h3>Sleep and recovery</h3><p>Protect a reasonably consistent sleep schedule when possible. Rest supports attention, learning, and emotional regulation.</p></div>
+        <div class="card"><h3>Movement</h3><p>Brief walks or stretches can break up long sitting periods and help you reset between work blocks.</p></div>
+        <div class="card"><h3>Food and water</h3><p>Plan regular meals and hydration that suit your needs. Avoid expecting yourself to focus well while neglecting basic needs.</p></div>
+        <div class="card"><h3>Realistic workload</h3><p>Leave breathing room. If everything is urgent, decide what can be postponed, simplified, delegated, or removed.</p></div>
+      </div>
+      <h3>Match tasks to your energy</h3>
+      <p>Notice when you tend to think most clearly. Put demanding work in a stronger focus window when possible. Use lower-energy periods for routine tasks, organizing materials, or preparing for tomorrow.</p>
+      <h3>Use the energy check</h3>
+      <p>Before a task, rate your energy from 1 to 5:</p>
+      <ul>
+        <li><strong>4–5:</strong> Do the challenging task or a longer focus block.</li>
+        <li><strong>2–3:</strong> Use a shorter block, reduce complexity, or work on a clear next action.</li>
+        <li><strong>1:</strong> Check what you need—rest, food, support, or a smaller expectation. If you are unwell or dangerously tired, rest may be the responsible choice.</li>
+      </ul>
+      <div class="callout teal"><strong>Discipline includes recovery.</strong> Rest is not automatically procrastination. Avoiding an important task repeatedly and recovering from genuine fatigue are different situations.</div>
+    </section>
+
+    <section id="setbacks">
+      <span class="chapter-label">Chapter 08</span>
+      <h2>How to recover when you fall off track</h2>
+      <p>Every useful routine will eventually meet a busy week, a difficult mood, an unexpected responsibility, or a missed session. The difference is not whether you ever slip; it is how you respond.</p>
+      <h3>The reset—not the restart</h3>
+      <div class="step"><div class="num">1</div><div><h3>Drop the self-attack</h3><p>“I missed two days” is a fact. “I'm hopeless” is a conclusion that does not help you plan.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>Find the obstacle</h3><p>Was the plan too long, the time unrealistic, the task unclear, or your environment full of distractions?</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Make the next step smaller</h3><p>Reduce the target temporarily so you can restart without waiting for a perfect day.</p></div></div>
+      <div class="step"><div class="num">4</div><div><h3>Choose a specific return time</h3><p>“I'll do it tomorrow” is vague. “At 9:00 tomorrow morning, I'll work on the first section for ten minutes” is actionable.</p></div></div>
+      <h3>Use the “never miss twice” idea flexibly</h3>
+      <p>When circumstances allow, try to return at the next planned opportunity rather than letting one missed session become a long disappearance. This is a helpful reminder, not a reason to feel guilty when illness, emergencies, caregiving, or other real needs interrupt your routine.</p>
+      <div class="callout yellow"><strong>Review, don't punish:</strong> Once a week, ask what worked, what got in the way, and what one adjustment would make next week easier. A system should improve as you learn about yourself.</div>
+    </section>
+
+    <section id="environment">
+      <span class="chapter-label">Chapter 09</span>
+      <h2>Design your environment for follow-through</h2>
+      <p>Your surroundings influence what feels easy to do. Small changes can reduce the number of decisions you have to make.</p>
+      <div class="grid">
+        <div class="card"><h3>Make good actions visible</h3><p>Leave the book on your desk, lay out workout clothes, or keep your project checklist where you will see it.</p></div>
+        <div class="card"><h3>Make distractions harder</h3><p>Move the phone away, block distracting sites during focus time, or keep snacks and entertainment out of your work area if they interrupt you.</p></div>
+        <div class="card"><h3>Prepare the night before</h3><p>Write the first task, open the needed materials, and decide when you will begin.</p></div>
+        <div class="card"><h3>Use supportive people</h3><p>Tell a trusted person your goal, arrange a study session, or share a weekly progress update if accountability helps you.</p></div>
+      </div>
+      <h3>Build a “ready-to-start” station</h3>
+      <p>Choose one place for a specific activity. Keep only the items needed for that activity there. Before you finish a session, reset the space so the next start is easier.</p>
+      <h3>Protect your priorities with polite boundaries</h3>
+      <p>When appropriate, try: “I'm working on something until 11:00. Can I get back to you after that?” Or: “I can't take that on today, but I can help on Friday.” You do not need to be available every minute to be a considerate person.</p>
+    </section>
+
+    <section id="plan">
+      <span class="chapter-label">Chapter 10</span>
+      <h2>Your 30-day discipline plan</h2>
+      <p>This plan builds gradually. Choose one meaningful goal—such as studying, writing, exercise, job applications, or business development. Avoid trying to overhaul every part of your life at once.</p>
+      <div class="progress"><span></span></div>
+      <h3>Week 1 — Make starting easier</h3>
+      <div class="day"><h3>Day 1: Choose one goal</h3><p>Write down why it matters and how you will measure progress.</p></div>
+      <div class="day"><h3>Day 2: Find your obstacle</h3><p>Notice when you procrastinate and what feeling or situation appears before it.</p></div>
+      <div class="day"><h3>Day 3: Define a tiny first step</h3><p>Write a next action that takes ten minutes or less.</p></div>
+      <div class="day"><h3>Day 4: Pick a reliable cue</h3><p>Link the action to a time or existing routine.</p></div>
+      <div class="day"><h3>Day 5: Try a focus block</h3><p>Complete one 10–25 minute session with fewer distractions.</p></div>
+      <div class="day"><h3>Day 6: Prepare your environment</h3><p>Make tools visible and your biggest distraction less convenient.</p></div>
+      <div class="day"><h3>Day 7: Review</h3><p>Celebrate any progress and choose one adjustment for next week.</p></div>
+
+      <h3>Week 2 — Make the habit repeatable</h3>
+      <div class="day"><h3>Day 8: Set a minimum version</h3><p>Decide what counts on a difficult day.</p></div>
+      <div class="day"><h3>Day 9: Schedule three sessions</h3><p>Put realistic sessions into your calendar with start times.</p></div>
+      <div class="day"><h3>Day 10: Use the 10-minute reset</h3><p>Apply it the next time you feel resistance.</p></div>
+      <div class="day"><h3>Day 11: Remove one distraction</h3><p>Change a setting or move an object that regularly interrupts you.</p></div>
+      <div class="day"><h3>Day 12: Track the action</h3><p>Use a simple checkbox or note the minutes completed.</p></div>
+      <div class="day"><h3>Day 13: Practice finishing</h3><p>End a session by writing the next step so you can resume more easily.</p></div>
+      <div class="day"><h3>Day 14: Review and adjust</h3><p>Keep what works. Shrink or reschedule what repeatedly fails.</p></div>
+
+      <h3>Week 3 — Strengthen focus and follow-through</h3>
+      <div class="day"><h3>Day 15: Choose your most important task</h3><p>Do one meaningful task before low-priority digital distractions when practical.</p></div>
+      <div class="day"><h3>Day 16: Try two focus blocks</h3><p>Work, take a short break, and return for a second block if your energy allows.</p></div>
+      <div class="day"><h3>Day 17: Practice “good enough to begin”</h3><p>Create a rough first draft instead of waiting for perfect conditions.</p></div>
+      <div class="day"><h3>Day 18: Set a boundary</h3><p>Protect one work period from avoidable interruptions.</p></div>
+      <div class="day"><h3>Day 19: Complete an avoided small task</h3><p>Use name it, shrink it, start it.</p></div>
+      <div class="day"><h3>Day 20: Plan recovery</h3><p>Decide what you'll do when a session is missed.</p></div>
+      <div class="day"><h3>Day 21: Weekly review</h3><p>Compare your plan with reality and make it more realistic.</p></div>
+
+      <h3>Week 4 — Build a sustainable system</h3>
+      <div class="day"><h3>Day 22: Choose your best work window</h3><p>Move a demanding task to a time when you tend to have more energy, if possible.</p></div>
+      <div class="day"><h3>Day 23: Prepare tomorrow tonight</h3><p>Write the first action and set up the materials.</p></div>
+      <div class="day"><h3>Day 24: Practice a minimum day</h3><p>Complete the smallest version of your habit, even if you have less time.</p></div>
+      <div class="day"><h3>Day 25: Ask for accountability</h3><p>Share a clear goal with someone supportive if that would help.</p></div>
+      <div class="day"><h3>Day 26: Review your distractions</h3><p>Notice which apps, people, places, or times most often interrupt you.</p></div>
+      <div class="day"><h3>Day 27: Finish one lingering task</h3><p>Break it into steps and complete the next meaningful part.</p></div>
+      <div class="day"><h3>Day 28: Plan next week</h3><p>Choose realistic work blocks and leave room for life.</p></div>
+      <div class="day"><h3>Day 29: Measure your progress</h3><p>Look at completed actions, not only the final outcome.</p></div>
+      <div class="day"><h3>Day 30: Keep the best three tools</h3><p>Choose the three practices that helped most and commit to using them for the next month.</p></div>
+      <div class="callout teal"><strong>Your goal after 30 days:</strong> not perfect discipline, but a clearer way to start, a few routines you can repeat, and a reliable method for getting back on track.</div>
+    </section>
+
+    <section id="worksheets">
+      <span class="chapter-label">Printable-style worksheets</span>
+      <h2>Turn the ideas into action</h2>
+      <p>Use these worksheets on screen, print them, or copy them into a notebook. Honest answers are more useful than impressive answers.</p>
+      <h3>Worksheet 1: Procrastination detective</h3>
+      <div class="worksheet">
+        <p class="prompt">The task I keep delaying is:</p><div class="line"></div>
+        <p class="prompt">When I think about doing it, I feel:</p><div class="line"></div>
+        <p class="prompt">The story I tell myself is:</p><div class="line"></div>
+        <p class="prompt">The main obstacle might be (unclear / too large / fear / boredom / distraction / low energy / other):</p><div class="line"></div>
+        <p class="prompt">A smaller first step I can do in 10 minutes is:</p><div class="line"></div>
+        <p class="prompt">I will begin on (day and time):</p><div class="line"></div>
+      </div>
+      <h3>Worksheet 2: My daily plan</h3>
+      <div class="worksheet">
+        <p class="prompt">Today's most important task:</p><div class="line"></div>
+        <p class="prompt">The first visible action:</p><div class="line"></div>
+        <p class="prompt">My focus time and place:</p><div class="line"></div>
+        <p class="prompt">The distraction I will reduce:</p><div class="line"></div>
+        <p class="prompt">My minimum version if the day gets difficult:</p><div class="line"></div>
+        <p class="prompt">At the end of today, I will record:</p><div class="line"></div>
+      </div>
+      <h3>Worksheet 3: Weekly review</h3>
+      <div class="worksheet">
+        <p class="prompt">What did I follow through on this week?</p><div class="line"></div><div class="line"></div>
+        <p class="prompt">What repeatedly got in the way?</p><div class="line"></div><div class="line"></div>
+        <p class="prompt">What helped me start or focus?</p><div class="line"></div><div class="line"></div>
+        <p class="prompt">What will I change next week?</p><div class="line"></div><div class="line"></div>
+        <p class="prompt">One thing I am proud of:</p><div class="line"></div>
+      </div>
+      <h3>Simple habit tracker</h3>
+      <p class="small">Write one habit in the first column and mark each day you practice it. The aim is awareness, not a perfect streak.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Habit</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr></thead>
+        <tbody>
+          <tr><td>My main habit</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+          <tr><td>Focus session</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+          <tr><td>Plan tomorrow</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="faq">
+      <span class="chapter-label">Quick answers</span>
+      <h2>Frequently asked questions</h2>
+      <h3>How long does it take to become disciplined?</h3>
+      <p>There is no universal timeline. It depends on the behavior, your environment, your starting point, and how consistently you practice. Focus on making the next repetition easier rather than expecting a fixed number of days to transform you.</p>
+      <h3>What if I keep failing to follow my schedule?</h3>
+      <p>Review whether the schedule is realistic. Reduce the number of tasks, make the first action clearer, add buffer time, and choose a time that fits your actual responsibilities. A plan is a tool to adjust—not a test of your worth.</p>
+      <h3>Should I wait until I feel motivated?</h3>
+      <p>Not usually. When the task is safe and appropriate, begin with a small action and allow motivation to catch up. But if you are exhausted, unwell, or overloaded, rest or changing the plan may be wiser than pushing through.</p>
+      <h3>Is multitasking a good way to get more done?</h3>
+      <p>For demanding work, switching between tasks often creates extra mental overhead. Try completing one clear block before checking messages or moving to another task.</p>
+      <h3>What if I have a bad day?</h3>
+      <p>Use the minimum version if it is reasonable, or rest if you need it. Then choose a specific time to return. One difficult day does not erase what you have practiced.</p>
+      <h3>How do I know if a technique is working?</h3>
+      <p>Track a useful behavior for a few weeks: how often you start when planned, focused minutes, completed next actions, or time spent avoiding the task. Keep the measures simple and change one thing at a time.</p>
+    </section>
+
+    <section id="pledge">
+      <span class="chapter-label">Your next chapter starts now</span>
+      <h2>Make a commitment you can keep</h2>
+      <p class="quote">“I don't have to do everything today. I have to take the next useful step, then return to it again.”</p>
+      <p>Self-discipline grows through repeated choices, honest reflection, and practical adjustments. You will have days when the plan works beautifully and days when it does not. Neither kind of day defines you. What matters is building a process that helps you begin, continue, and return.</p>
+      <div class="worksheet">
+        <p class="prompt">For the next 7 days, the one habit I will practice is:</p><div class="line"></div>
+        <p class="prompt">I will do it after / at:</p><div class="line"></div>
+        <p class="prompt">My minimum version is:</p><div class="line"></div>
+        <p class="prompt">When I miss a session, I will:</p><div class="line"></div>
+        <p class="prompt">My start date:</p><div class="line"></div>
+      </div>
+      <div class="callout"><strong>Start now:</strong> Choose one task you have been postponing. Write the smallest next action, set a ten-minute timer, and begin. Your first win is not finishing everything—it is proving that you can start.</div>
+      <p class="small">Educational note: This guide provides general personal-development information and is not medical or mental-health treatment. Adapt the ideas to your circumstances and seek qualified support when persistent difficulties significantly affect daily life.</p>
+      <button class="btn" onclick="window.print()">Print or save as PDF</button>
+    </section>
+  </main>
+</div>
+<footer class="footer">
+  <h2 style="color:#fff;margin:0">The Discipline Blueprint</h2>
+  <p>A practical guide to building habits, reducing procrastination, and following through one small action at a time.</p>
+  <p>Make progress repeatable. Make the next step clear. Begin where you are.</p>
+</footer>
+</body>
+</html>
